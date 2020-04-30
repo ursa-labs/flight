@@ -1,0 +1,16 @@
+Package: flight
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Authors@R: c(
+    person("Neal", "Richardson", email = "neal@ursalabs.org", role = c("aut", "cre"))
+  )
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: Apache License (>= 2.0)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    arrow (>= 0.17),
+    reticulate
+RoxygenNote: 7.1.0
