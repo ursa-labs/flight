@@ -50,5 +50,12 @@ cl %>%
   flight_get("test_data/iris") %>%
   group_by(Species) %>%
   summarize(max_petal = max(Petal.Length))
+
+## # A tibble: 3 x 2
+##   Species    max_petal
+##   <fct>          <dbl>
+## 1 setosa           1.9
+## 2 versicolor       5.1
+## 3 virginica        6.9
 ```
 
