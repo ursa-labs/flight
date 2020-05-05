@@ -13,6 +13,9 @@ import pyarrow.flight
 
 class DemoFlightServer(pyarrow.flight.FlightServerBase):
     def __init__(self, host="localhost", port=5005):
+        if isinstance(port, float):
+            # Because R is looser with integer vs. float
+            port = int(port)
         location = "grpc+tcp://{}:{}".format(host, port) 
         super(DemoFlightServer, self).__init__(location)
         self.flights = {}

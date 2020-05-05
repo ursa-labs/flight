@@ -30,9 +30,9 @@ arrow::install_pyarrow()
 ``` r
 # In one process, start the demo server
 library(flight)
-load_flight_server("demo_server")
-srv <- DemoFlightServer()
-srv$serve(port = 8089)
+demo_server <- load_flight_server("demo_server")
+server <- demo_server$DemoFlightServer(port = 8089)
+server$serve()
 
 # In a different process, connect to it
 library(flight)
@@ -46,7 +46,7 @@ library(flight)
 library(arrow)
 library(dplyr)
 client <- flight_connect(port = 8089)
-cl %>%
+client %>%
   flight_get("test_data/iris") %>%
   group_by(Species) %>%
   summarize(max_petal = max(Petal.Length))
